@@ -1,0 +1,149 @@
+{
+    "editor.fontSize": 14,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        },
+        // {
+        //     "before": [
+        //         "n"
+        //     ],
+        //     "after": [
+        //         "nzz"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "N"
+        //     ],
+        //     "after": [
+        //         "Nzz"
+        //     ]
+        // },
+        {
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>zz"
+            ]
+        },
+        {
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>zz"
+            ]
+        },
+        {
+            "before": [
+                "<C-i>"
+            ],
+            "after": [
+                "<C-i>zz"
+            ]
+        },
+    ],
+    "python.formatting.provider": "none",
+    "explorer.confirmDelete": false,
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDragAndDrop": false,
+    "python.venvPath": "/opt/anaconda3/envs/",
+    "terminal.integrated.inheritEnv": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "autoDocstring.docstringFormat": "numpy",
+    "workbench.editor.enablePreview": false,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "json.schemas": [
+
+    
+    ],
+    // use different tabs for different languages
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "[cpp]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "settingsSync.ignoredSettings": [],
+    "latex-workshop.latex.autoBuild.run": "never",
+    "[tex]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false
+    },
+    //-------- Code Spell Checker Configuration --------
+    // The Language locale to use when spell checking. "en", "en-US" and "en-GB" are currently supported by default.
+    "cSpell.language": "en",
+    // Controls the maximum number of spelling errors per document.
+    "cSpell.maxNumberOfProblems": 100,
+    // Controls the number of suggestions shown.
+    "cSpell.numSuggestions": 8,
+    // The minimum length of a word before checking it against a dictionary.
+    "cSpell.minWordLength": 4,
+    // Specify file types to spell check.
+    "cSpell.enabledLanguageIds": [
+        "latex",
+        "go",
+        "markdown",
+        "php",
+        "plaintext",
+        "yml"
+    ],
+    // Enable / Disable the spell checker.
+    "cSpell.enabled": true,
+    // Display the spell checker status on the status bar.
+    "cSpell.showStatus": true,
+    // Words to add to dictionary for a workspace.
+    "cSpell.words": [],
+    // Enable / Disable compound words like 'errormessage'
+    "cSpell.allowCompoundWords": false,
+    // User words to add to dictionary.  Should only be in the user settings.
+    "cSpell.userWords": [],
+    // Specify paths/files to ignore.
+    "cSpell.ignorePaths": [
+        "node_modules", // this will ignore anything the node_modules directory
+        "**/node_modules", // the same for this one
+        "**/node_modules/**", // the same for this one
+        "node_modules/**", // Doesn't currently work due to how the current working directory is determined.
+        "vscode-extension", //
+        ".git", // Ignore the .git directory
+        "*.dll", // Ignore all .dll files.
+        "**/*.dll" // Ignore all .dll files
+    ],
+    "cSpell.languageSettings": [],
+    "[latex]": {
+        "editor.defaultFormatter": "mathematic.vscode-latex"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "python.formatting.blackPath": "/Library/Frameworks/Python.framework/Versions/3.10/bin/black",
+    "workbench.colorTheme": "Visual Studio Dark - C++",
+    "settingsSync.ignoredExtensions": [
+
+    ],
+    "editor.accessibilitySupport": "off",
+    "C_Cpp.default.compilerPath": "",
+    "C_Cpp.files.exclude": {
+        "**/.vscode": true,
+        "**/.vs": true
+    },
+    "anki.defaultDeck": "Italienisch::MostCommonVerbs",
+    "editor.defaultFormatter": "ms-python.black-formatter"
+}
