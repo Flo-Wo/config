@@ -1,57 +1,24 @@
 {
     "editor.fontSize": 14,
+    "vim.useSystemClipboard": true,
     "vim.insertModeKeyBindings": [
         {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<esc>"
-            ]
-        },
-        // {
-        //     "before": [
-        //         "n"
-        //     ],
-        //     "after": [
-        //         "nzz"
-        //     ]
-        // },
-        // {
-        //     "before": [
-        //         "N"
-        //     ],
-        //     "after": [
-        //         "Nzz"
-        //     ]
-        // },
-        {
-            "before": [
-                "<C-d>"
-            ],
-            "after": [
-                "<C-d>zz"
-            ]
+            "before": ["j", "j"],
+            "after": ["<esc>"]
         },
         {
-            "before": [
-                "<C-u>"
-            ],
-            "after": [
-                "<C-u>zz"
-            ]
+            "before": ["<C-d>"],
+            "after": ["<C-d>, z, z"]
         },
         {
-            "before": [
-                "<C-i>"
-            ],
-            "after": [
-                "<C-i>zz"
-            ]
+            "before": ["<C-u>"],
+            "after": ["<C-u>, z, z"]
         },
+        {
+            "before": ["<C-i>"],
+            "after": ["<C-i>, z, z"]
+        }
     ],
-    "python.formatting.provider": "none",
     "explorer.confirmDelete": false,
     "editor.lineNumbers": "relative",
     "explorer.confirmDragAndDrop": false,
@@ -59,14 +26,12 @@
     "terminal.integrated.inheritEnv": false,
     "security.workspace.trust.untrustedFiles": "open",
     "autoDocstring.docstringFormat": "numpy",
-    "workbench.editor.enablePreview": false,
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-    "json.schemas": [
-
-    
-    ],
-    // use different tabs for different languages
+    "files.associations": {
+        "*.metal": "cpp"
+    },
+    // Use different tabs for different languages
     "[python]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 4,
@@ -76,74 +41,101 @@
             "source.organizeImports": "explicit"
         },
         "editor.formatOnPaste": true,
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[r]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
     },
     "[cpp]": {
         "editor.insertSpaces": true,
-        "editor.tabSize": 2
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "settingsSync.ignoredSettings": [],
-    "latex-workshop.latex.autoBuild.run": "never",
-    "[tex]": {
-        "editor.formatOnSave": false,
-        "editor.formatOnPaste": false
-    },
-    //-------- Code Spell Checker Configuration --------
-    // The Language locale to use when spell checking. "en", "en-US" and "en-GB" are currently supported by default.
-    "cSpell.language": "en",
-    // Controls the maximum number of spelling errors per document.
-    "cSpell.maxNumberOfProblems": 100,
-    // Controls the number of suggestions shown.
-    "cSpell.numSuggestions": 8,
-    // The minimum length of a word before checking it against a dictionary.
-    "cSpell.minWordLength": 4,
-    // Specify file types to spell check.
-    "cSpell.enabledLanguageIds": [
-        "latex",
-        "go",
-        "markdown",
-        "php",
-        "plaintext",
-        "yml"
+    // call works, but way too slow -> editor crashes
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "-c","%DIR%/", "%TMPFILE%",
+        // "-l=%DIR%/latexindent.yaml",
+        // "-l=/opt/homebrew/Cellar/latexindent/3.24.5/libexec/bin/defaultSettings.yaml",
+        "-y=defaultIndent: ' '",
+        "-m"
     ],
-    // Enable / Disable the spell checker.
+    // "latex-workshop.formatting.latexindent.path": "/opt/homebrew/bin/latexindent",
+    // "latex-workshop.formatting.latexindent.args": [
+    //     "-l",
+    //     "-m",
+    //     "-s",
+    // ],
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.message.error.show": true,
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex",
+            "tools": ["pdflatex"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.message.warning.show": false,
+    "[latex]": {
+        // "editor.defaultFormatter": "mathematic.vscode-latex",
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "files.encoding": "utf8",
+    },
+    // Turn off the R linter
+    "r.lsp.diagnostics": false,
+    // Code Spell Checker Configuration
+    "cSpell.language": "en",
+    "cSpell.maxNumberOfProblems": 100,
+    "cSpell.numSuggestions": 8,
+    "cSpell.minWordLength": 4,
+    "cSpell.enabledFileTypes": {
+        "latex": true,
+        "markdown": true,
+        "python": true,
+        "plaintext": true
+    },
     "cSpell.enabled": true,
-    // Display the spell checker status on the status bar.
-    "cSpell.showStatus": true,
-    // Words to add to dictionary for a workspace.
     "cSpell.words": [],
-    // Enable / Disable compound words like 'errormessage'
     "cSpell.allowCompoundWords": false,
-    // User words to add to dictionary.  Should only be in the user settings.
     "cSpell.userWords": [],
-    // Specify paths/files to ignore.
     "cSpell.ignorePaths": [
-        "node_modules", // this will ignore anything the node_modules directory
-        "**/node_modules", // the same for this one
-        "**/node_modules/**", // the same for this one
-        "node_modules/**", // Doesn't currently work due to how the current working directory is determined.
-        "vscode-extension", //
-        ".git", // Ignore the .git directory
-        "*.dll", // Ignore all .dll files.
-        "**/*.dll" // Ignore all .dll files
+        "node_modules",
+        "**/node_modules",
+        "**/node_modules/**",
+        "vscode-extension",
+        ".git",
+        "*.dll",
+        "**/*.dll"
     ],
     "cSpell.languageSettings": [],
-    "[latex]": {
-        "editor.defaultFormatter": "mathematic.vscode-latex"
-    },
     "git.openRepositoryInParentFolders": "always",
-    "python.formatting.blackPath": "/Library/Frameworks/Python.framework/Versions/3.10/bin/black",
     "workbench.colorTheme": "Visual Studio Dark - C++",
-    "settingsSync.ignoredExtensions": [
-
-    ],
+    "settingsSync.ignoredSettings": [],
     "editor.accessibilitySupport": "off",
     "C_Cpp.default.compilerPath": "",
     "C_Cpp.files.exclude": {
         "**/.vscode": true,
         "**/.vs": true
     },
-    "anki.defaultDeck": "Italienisch::MostCommonVerbs",
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    // "editor.defaultFormatter": "ms-python.black-formatter",
+    "workbench.settings.applyToAllProfiles": [],
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    // TODO: last edit was here
 }
